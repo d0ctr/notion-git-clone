@@ -41,9 +41,9 @@ const original_logger = winston.createLogger({
             level: 'debug',
             format: winston.format.combine(
                 winston.format.simple(),
-                winston.format.printf(({...msg}) => {
+                winston.format.printf((msg) => {
                     delete msg.exclude;
-                    return {...msg};
+                    return msg;
                 }),
                 winston.format.prettyPrint()
             ),
