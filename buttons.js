@@ -55,6 +55,9 @@ class Button extends EventEmitter{
         let new_checkbox = new CheckBox(await this.checkbox.getProperties(this.client, this.logger));
         let diff = updatedDiff(this.checkbox, new_checkbox)
         diff = new CheckBox(diff ? diff.data : undefined);
+        if (diff) {
+            this.logger.debug(`Button ${this.button_name} state changed`, { object: diff })
+        };
         if (!diff) {
             return;
         }
@@ -67,7 +70,7 @@ class Button extends EventEmitter{
             this.logger.debug(`Sending pressed for ${this.button_name}`);
             this.emit('pressed');
             this.checkbox.update({ checked: false });
-            await this.checkbox.dump_changes(this.client, this.logger.child({ module: this.checkbox.constructor.name }));
+            this.checkbox.dump_changes(this.client, this.logger.child({ module: this.checkbox.constructor.name }));
             return;
         }
         else if (typeof diff.checked !== 'undefined' && !diff.checked) {
