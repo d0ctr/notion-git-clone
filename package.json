@@ -1,0 +1,26 @@
+{
+  "name": "notion-git-clone",
+  "type": "commonjs",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "@notionhq/client": "^0.4.4",
+    "deep-object-diff": "^1.1.0",
+    "intel": "^1.2.0",
+    "js-yaml": "^4.1.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.3.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "notion"
+  ],
+  "author": "Danila Vasilev (@d0ctr)",
+  "license": "MIT",
+  "description": ""
+}
