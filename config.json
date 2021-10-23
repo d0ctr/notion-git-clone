@@ -1,0 +1,7 @@
+{
+    "NOTION_TOKEN": "",
+    "ROOT_PAGE_NAME": "!notion-git-clone",
+    "FETCHING_INTERVAL": "5000",
+    "RUN_BUTTON_NAME": "!RUN",
+    "CLEAR_BUTTON_NAME": "!CLEAR"
+}
