@@ -1,4 +1,4 @@
-./vscode
-./node_modules
-./packege-lock.json
-./logs/*
+.vscode/*
+node_modules/*
+package-lock.json
+logs/*
