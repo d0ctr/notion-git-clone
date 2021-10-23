@@ -170,17 +170,15 @@ class Block {
     };
 
     async dump_changes(client, logger) {
-        try {
-            let res = await this.__properties_updater(client);
-            if (!res) {
+        this.__properties_updater(client).then((value) => {
+            if (!value) {
                 logger.error(`No response for ${this.type}:${this.id} update`, { object: this });
             }
-            this.update(res);
             logger.debug(`Succesfully updated ${this.type}:${this.id}`, {object: this });
-        }
-        catch (e) {
+            this.update({ data: value });
+        }).catch((error) => {
             logger.error(`Error while updating ${this.type}:${this.id}`, { error: e })
-        }
+        });
     };
 }
 
